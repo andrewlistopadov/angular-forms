@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleFormComponent } from './simple-form.component';
+import { TemplateDrivenFormComponent } from './template-driven-form.component';
 
-describe('SimpleFormComponent', () => {
-  let component: SimpleFormComponent;
-  let fixture: ComponentFixture<SimpleFormComponent>;
+describe('TemplateDrivenFormComponent', () => {
+  let component: TemplateDrivenFormComponent;
+  let fixture: ComponentFixture<TemplateDrivenFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimpleFormComponent ]
+      declarations: [ TemplateDrivenFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SimpleFormComponent);
+    fixture = TestBed.createComponent(TemplateDrivenFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

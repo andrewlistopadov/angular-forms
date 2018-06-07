@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SimpleFormModule } from './simple-form/simple-form.module';
+import { TemplateDrivenFormModule } from './template-driven-form/template-driven-form.module';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { ReactiveFormModule } from './reactive-form/reactive-form.module';
   ],
   imports: [
     BrowserModule,
-    SimpleFormModule,
+    TemplateDrivenFormModule,
     ReactiveFormModule
   ],
   providers: [],
