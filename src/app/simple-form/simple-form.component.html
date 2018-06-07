@@ -1,0 +1,15 @@
+<article class="simple-form">
+  <h2>Simple Form</h2>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <label class="row">First name
+      <input type="text" placeholder="First name" name="firstName" ngModel>
+    </label>
+    <label class="row">Last name
+      <input type="text" placeholder="Last name" name="lastName" ngModel>
+    </label>
+    <label class="row">Email
+      <input type="text" placeholder="Email" name="email" ngModel>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</article>
