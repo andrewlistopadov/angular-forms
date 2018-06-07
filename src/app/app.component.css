@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.form-examples> :not(:first-child) {
+  margin-left: 14rem;
+}
+
 h1 {
   text-align: center;
 }
