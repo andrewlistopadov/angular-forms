@@ -1,3 +1,15 @@
-<p>
-  reactive-form works!
-</p>
+<article class="reactive-form">
+  <h2>Reactive Form</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <label class="row">First name
+      <input type="text" placeholder="First name" name="firstName" [formControl]="myForm.controls['firstName']">
+    </label>
+    <label class="row">Last name
+      <input type="text" placeholder="Last name" name="lastName" [formControl]="myForm.controls['lastName']">
+    </label>
+    <label class="row">Email
+      <input type="text" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</article>

@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button[type=submit] {
+  align-self: flex-end;
+  margin-top: .2rem;
+}
+
+form>label, form>label>input {
+  display: block;
+}
+
+form>label>input {
+  margin-top: .3rem;
+}
+
+.row {
+  margin-bottom: .8rem;
+}

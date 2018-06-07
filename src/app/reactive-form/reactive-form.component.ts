@@ -7,10 +7,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-  personalDataForm: FormGroup;
+  myForm: FormGroup;
 
   constructor(formBuilder: FormBuilder) { 
-    this.personalDataForm = formBuilder.group({
+    this.myForm = formBuilder.group({
       'firstName': ['Andrei'],
       'lastName': ['Listopadov'],
       'email': ['andrew.listopadov@gmail.com']
@@ -18,6 +18,10 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: any): void {
+    alert(`first name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
   }
 
 }
