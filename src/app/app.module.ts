@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SimpleFormModule } from './simple-form/simple-form.module';
+import { ReactiveFormModule } from './reactive-form/reactive-form.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { SimpleFormModule } from './simple-form/simple-form.module';
   ],
   imports: [
     BrowserModule,
-    SimpleFormModule
+    SimpleFormModule,
+    ReactiveFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
