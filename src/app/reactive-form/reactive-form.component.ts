@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+
+export function emailValidator(control: FormControl): { [s: string]: boolean } {
+  if (!control.value.match(/.+@.+\..+/i)) {
+    return { invalidEmail: true };
+  }
+}
 
 @Component({
   selector: 'reactive-form',
@@ -16,7 +22,7 @@ export class ReactiveFormComponent implements OnInit {
     this.myForm = this.fb.group({
       'firstName': ['Andrei', Validators.compose([Validators.required, Validators.minLength(4)])],
       'lastName': ['Listopadov'],
-      'email': ['andrew.listopadov@gmail.com', Validators.required]
+      'email': ['andrew.listopadov@gmail.com', Validators.compose([Validators.required, emailValidator])]
     });
   }
 

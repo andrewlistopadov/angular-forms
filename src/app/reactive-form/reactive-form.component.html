@@ -9,7 +9,7 @@
       Last name
       <input type="text" placeholder="Last name" name="lastName" [formControl]="myForm.controls['lastName']">
     </label>
-    <label class="row" [ngClass]="{'error': controlHasError('email'), 'error-required': myForm.hasError('required', 'email')}">
+    <label class="row" [ngClass]="{'error': controlHasError('email'), 'error-required': myForm.hasError('required', 'email'), 'error-email': myForm.hasError('invalidEmail', 'email')}">
       Email
       <input type="text" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
     </label>
