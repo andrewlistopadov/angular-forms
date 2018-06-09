@@ -18,5 +18,16 @@ form>label>input {
 }
 
 .row {
-  margin-bottom: .8rem;
+  margin-bottom: 1.5rem;
+}
+
+.error::after {
+  color: red;
+  content: "The field is required";
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.row.error {
+  margin-bottom: .35rem;
 }

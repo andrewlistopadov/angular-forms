@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'reactive-form',
@@ -14,14 +14,14 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      'firstName': ['Andrei'],
+      'firstName': ['Andrei', Validators.required],
       'lastName': ['Listopadov'],
-      'email': ['andrew.listopadov@gmail.com']
+      'email': ['andrew.listopadov@gmail.com', Validators.required]
     });
   }
 
   onSubmit(form: any): void {
-    alert(`first name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
+    alert(`form is valid: ${this.myForm.valid}\nfirst name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
   }
 
 }
