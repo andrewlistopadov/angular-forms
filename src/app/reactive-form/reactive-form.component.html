@@ -1,13 +1,16 @@
 <article class="reactive-form">
   <h2>Reactive Form</h2>
   <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
-    <label class="row" [class.error]="myForm.hasError('required', 'firstName')">First name
+    <label class="row" [ngClass]="{'error': controlHasError('firstName'), 'error-required': myForm.hasError('required', 'firstName'), 'error-min-length-4': myForm.hasError('minlength', 'firstName')}">
+      First name
       <input type="text" placeholder="First name" name="firstName" [formControl]="myForm.controls['firstName']">
     </label>
-    <label class="row">Last name
+    <label class="row">
+      Last name
       <input type="text" placeholder="Last name" name="lastName" [formControl]="myForm.controls['lastName']">
     </label>
-    <label class="row" [class.error]="myForm.hasError('required', 'email')">Email
+    <label class="row" [ngClass]="{'error': controlHasError('email'), 'error-required': myForm.hasError('required', 'email')}">
+      Email
       <input type="text" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
     </label>
     <button type="submit">Submit</button>

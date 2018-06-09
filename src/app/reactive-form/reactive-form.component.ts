@@ -9,19 +9,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
   myForm: FormGroup;
 
-  constructor(public fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      'firstName': ['Andrei', Validators.required],
+      'firstName': ['Andrei', Validators.compose([Validators.required, Validators.minLength(4)])],
       'lastName': ['Listopadov'],
       'email': ['andrew.listopadov@gmail.com', Validators.required]
     });
   }
 
   onSubmit(form: any): void {
-    alert(`form is valid: ${this.myForm.valid}\nfirst name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
+    alert(`first name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
+  }
+
+  controlHasError(name: string): boolean | null {
+    return !this.myForm.controls[name].valid && this.myForm.controls[name].touched ? true : null;
   }
 
 }

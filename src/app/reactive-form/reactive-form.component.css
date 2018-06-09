@@ -1,3 +1,7 @@
+:host {
+  width: 18rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -23,9 +27,16 @@ form>label>input {
 
 .error::after {
   color: red;
-  content: "The field is required";
   font-size: .8rem;
   font-weight: 600;
+}
+
+.error.error-required::after {
+  content: "The field is required";
+}
+
+.error.error-min-length-4::after {
+  content: "The field should be 4 characters minimum";
 }
 
 .row.error {
