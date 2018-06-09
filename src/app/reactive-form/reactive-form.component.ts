@@ -9,15 +9,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
   myForm: FormGroup;
 
-  constructor(formBuilder: FormBuilder) { 
-    this.myForm = formBuilder.group({
+  constructor(public fb: FormBuilder) {
+  }
+
+  ngOnInit() {
+    this.myForm = this.fb.group({
       'firstName': ['Andrei'],
       'lastName': ['Listopadov'],
       'email': ['andrew.listopadov@gmail.com']
     });
-  }
-
-  ngOnInit() {
   }
 
   onSubmit(form: any): void {
