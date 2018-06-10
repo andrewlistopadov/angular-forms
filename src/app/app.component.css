@@ -1,10 +1,11 @@
 .form-examples {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .form-examples> :not(:first-child) {
-  margin-left: 14rem;
+  margin-left: 1rem;
 }
 
 h1 {
