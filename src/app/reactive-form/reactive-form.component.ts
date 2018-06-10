@@ -30,8 +30,12 @@ export class ReactiveFormComponent implements OnInit {
     alert(`first name: ${form.firstName}\nlastname: ${form.lastName}\nemail: ${form.email}`);
   }
 
-  controlHasError(name: string): boolean | null {
+  controlIsInvalid(name: string): boolean | null {
     return !this.myForm.controls[name].valid && this.myForm.controls[name].touched ? true : null;
+  }
+
+  controlHasError(name: string, error: string): boolean | null {
+    return this.myForm.hasError(error, [name]) ? true : null;
   }
 
 }
