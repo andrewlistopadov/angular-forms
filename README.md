@@ -1,11 +1,20 @@
 # AngularForms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
-You can open https://andrewlistopadov.github.io/angular-forms/ to see how it works.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Deployment on github pages
+
+### Pre-condition
+1. Create the github token. See https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+2. For convenience use GH_TOKEN environment variable for storing the token value.
+
+Run `npm run deploy`.
+
+You can check if it works on https://andrewlistopadov.github.io/angular-forms/
 
 ## Code scaffolding
 
