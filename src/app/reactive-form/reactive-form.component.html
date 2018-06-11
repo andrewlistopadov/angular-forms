@@ -17,6 +17,6 @@
       Phone
       <input type="tel" placeholder="Phone number" name="phoneNumber" [formControl]="myForm.controls['phoneNumber']">
     </label>
-    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
   </form>
 </article>
