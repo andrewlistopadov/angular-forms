@@ -13,7 +13,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 2. Create the github token. See https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 3. For convenience use GH_TOKEN environment variable for storing the token value.
 
-Run `npm run deploy`.
+**NOTE** be sure you stopped dev server before running deployment.
+
+4. Run `npm run deploy`.
 
 You can check if it works on https://andrewlistopadov.github.io/angular-forms/
 
