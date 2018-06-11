@@ -11,7 +11,7 @@
     </label>
     <label class="row" [ngClass]="{'error': controlIsInvalid('email'), 'error-required': controlHasError('email', 'required'), 'error-email': controlHasError('email', 'invalidEmail')}">
       Email
-      <input type="text" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
+      <input type="email" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
     </label>
     <button type="submit" [disabled]="!myForm.valid">Submit</button>
   </form>

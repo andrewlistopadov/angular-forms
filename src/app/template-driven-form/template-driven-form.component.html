@@ -1,6 +1,6 @@
 <article class="template-driven-form">
     <h2>Template Driven Form</h2>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" novalidate>
       <label class="row">First name
         <input type="text" placeholder="First name" name="firstName" ngModel>
       </label>
@@ -8,7 +8,7 @@
         <input type="text" placeholder="Last name" name="lastName" ngModel>
       </label>
       <label class="row">Email
-        <input type="text" placeholder="Email" name="email" ngModel>
+        <input type="email" placeholder="Email" name="email" ngModel>
       </label>
       <button type="submit">Submit</button>
     </form>
