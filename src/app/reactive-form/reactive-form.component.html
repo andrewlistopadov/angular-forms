@@ -1,6 +1,6 @@
 <article class="reactive-form">
   <h2>Reactive Form</h2>
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
     <label class="row" [ngClass]="{'error': controlIsInvalid('firstName'), 'error-required': controlHasError('firstName', 'required'), 'error-min-length-4': controlHasError('firstName', 'minlength')}">
       First name
       <input type="text" placeholder="First name" name="firstName" [formControl]="myForm.controls['firstName']">

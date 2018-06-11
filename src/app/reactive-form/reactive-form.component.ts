@@ -8,7 +8,7 @@ export function emailValidator(control: FormControl): { [s: string]: boolean } {
 }
 
 export function phoneNumberValidator(control: FormControl): { [s: string]: boolean } {
-  if (!control.value.match(/^((\+7|7|8)+([0-9]){10})/g)) {
+  if (!control.value.match(/^((\+7|7|8)+([0-9]){10})/)) {
     return { invalidPhoneNumber: true };
   }
 }
