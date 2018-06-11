@@ -5,13 +5,17 @@
       First name
       <input type="text" placeholder="First name" name="firstName" [formControl]="myForm.controls['firstName']">
     </label>
-    <label class="row">
+    <label class="row" [ngClass]="{'error': controlIsInvalid('lastName'), 'error-required': controlHasError('lastName', 'required'), 'error-min-length-4': controlHasError('lastName', 'minlength')}">
       Last name
       <input type="text" placeholder="Last name" name="lastName" [formControl]="myForm.controls['lastName']">
     </label>
     <label class="row" [ngClass]="{'error': controlIsInvalid('email'), 'error-required': controlHasError('email', 'required'), 'error-email': controlHasError('email', 'invalidEmail')}">
       Email
       <input type="email" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
+    </label>
+    <label class="row" [ngClass]="{'error': controlIsInvalid('phoneNumber'), 'error-required': controlHasError('phoneNumber', 'required'), 'error-phone': controlHasError('phoneNumber', 'invalidPhoneNumber')}">
+      Phone
+      <input type="tel" placeholder="Phone number" name="phoneNumber" [formControl]="myForm.controls['phoneNumber']">
     </label>
     <button type="submit" [disabled]="!myForm.valid">Submit</button>
   </form>
