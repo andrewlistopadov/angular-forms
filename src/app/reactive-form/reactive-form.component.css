@@ -39,6 +39,10 @@ form>label>input {
   content: "The field should be correct email address";
 }
 
+.error.error-phone::after {
+  content: "The field should be correct phone number";
+}
+
 .error.error-required::after {
   content: "The field is required";
 }
