@@ -26,7 +26,7 @@ export class TemplateDrivenFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.user = new User('Andrei', '', 'andrew.listopadov@gmail.com', '+79998887766');
+    this.user = new User('Andrei', 'Listopadov', 'andrew.listopadov@gmail.com', '+79998887766');
   }
 
   onSubmit(user: User): void {

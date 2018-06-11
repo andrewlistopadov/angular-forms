@@ -8,7 +8,7 @@ export function emailValidator(control: FormControl): { [s: string]: boolean } {
 }
 
 export function phoneNumberValidator(control: FormControl): { [s: string]: boolean } {
-  if (!control.value.match(/^((\+7|7|8)+([0-9]){10})/)) {
+  if (!control.value.match(/^((\+7|7|8)+([0-9]){10})$/)) {
     return { invalidPhoneNumber: true };
   }
 }
@@ -27,7 +27,7 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.fb.group({
       'firstName': ['Andrei', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'lastName': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'lastName': ['Listopadov', Validators.compose([Validators.required, Validators.minLength(4)])],
       'email': ['andrew.listopadov@gmail.com', Validators.compose([Validators.required, emailValidator])],
       'phoneNumber': ['+79998887766', Validators.compose([Validators.required, phoneNumberValidator])]
     });

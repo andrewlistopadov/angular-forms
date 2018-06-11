@@ -16,7 +16,7 @@
     <label class="row" [ngClass]="{'error': controlIsInvalid(phoneNumber), 'error-required': controlHasError(phoneNumber, 'required'), 'error-phone': controlHasError(phoneNumber, 'pattern')}">
       Phone
       <input type="tel" placeholder="Phone number" name="phoneNumber" [ngModel]="user.phoneNumber" #phoneNumber="ngModel" required
-        pattern="^((\+7|7|8)+([0-9]){10})">
+        pattern="^((\+7|7|8)+([0-9]){10})$">
     </label>
     <button type="submit" [disabled]="f.invalid">Submit</button>
   </form>
