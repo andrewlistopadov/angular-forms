@@ -24,3 +24,29 @@ form>label>input {
 .row {
   margin-bottom: 1.5rem;
 }
+
+.error::after {
+  color: red;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.error.error-min-length-4::after {
+  content: "The field should be 4 characters minimum";
+}
+
+.error.error-email::after {
+  content: "The field should be correct email address";
+}
+
+.error.error-phone::after {
+  content: "The field should be correct phone number";
+}
+
+.error.error-required::after {
+  content: "The field is required";
+}
+
+.row.error {
+  margin-bottom: .35rem;
+}

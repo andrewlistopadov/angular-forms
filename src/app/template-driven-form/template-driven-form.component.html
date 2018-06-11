@@ -1,15 +1,23 @@
 <article class="template-driven-form">
-    <h2>Template Driven Form</h2>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" novalidate>
-      <label class="row">First name
-        <input type="text" placeholder="First name" name="firstName" ngModel>
-      </label>
-      <label class="row">Last name
-        <input type="text" placeholder="Last name" name="lastName" ngModel>
-      </label>
-      <label class="row">Email
-        <input type="email" placeholder="Email" name="email" ngModel>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  </article>
+  <h2>Template Driven Form</h2>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <label class="row" [ngClass]="{'error': controlIsInvalid(firstName), 'error-required': controlHasError(firstName, 'required'), 'error-min-length-4': controlHasError(firstName, 'minlength')}">
+      First name
+      <input type="text" placeholder="First name" name="firstName" [ngModel]="user.firstName" #firstName="ngModel" required minlength="4">
+    </label>
+    <label class="row" [ngClass]="{'error': controlIsInvalid(lastName), 'error-required': controlHasError(lastName, 'required'), 'error-min-length-4': controlHasError(lastName, 'minlength')}">
+      Last name
+      <input type="text" placeholder="Last name" name="lastName" [ngModel]="user.lastName" #lastName="ngModel" required minlength="4">
+    </label>
+    <label class="row" [ngClass]="{'error': controlIsInvalid(email), 'error-required': controlHasError(email, 'required'), 'error-email': controlHasError(email, 'pattern')}">
+      Email
+      <input type="email" placeholder="Email" name="email" [ngModel]="user.email" #email="ngModel" required pattern=".+@.+\..+">
+    </label>
+    <label class="row" [ngClass]="{'error': controlIsInvalid(phoneNumber), 'error-required': controlHasError(phoneNumber, 'required'), 'error-phone': controlHasError(phoneNumber, 'pattern')}">
+      Phone
+      <input type="tel" placeholder="Phone number" name="phoneNumber" [ngModel]="user.phoneNumber" #phoneNumber="ngModel" required
+        pattern="^((\+7|7|8)+([0-9]){10})">
+    </label>
+    <button type="submit" [disabled]="f.invalid">Submit</button>
+  </form>
+</article>
