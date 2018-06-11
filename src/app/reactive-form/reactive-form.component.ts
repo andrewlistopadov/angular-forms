@@ -38,7 +38,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   controlIsInvalid(name: string): boolean | null {
-    return !this.myForm.controls[name].valid && this.myForm.controls[name].touched ? true : null;
+    return this.myForm.controls[name].invalid && this.myForm.controls[name].touched ? true : null;
   }
 
   controlHasError(name: string, error: string): boolean | null {
